@@ -34,6 +34,13 @@ local booths = {
     ["28"] = "-8, 3, 151"
 }
 
+local function antiafk()
+	local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.ClientMain.Replications.Workers.WalkDummy)
+	setconstant(Module,34,function()
+	   game:GetService("RunService").Heartbeat:Wait()
+	end)
+end
+
 local function serverHop()
     local gameId = "8737602449"
     if vcEnabled and getgenv().settings.vcServer then
@@ -82,7 +89,7 @@ end
 local function refresh()
 	require(game.ReplicatedStorage.Remotes).Event("RefreshItems"):InvokeServer()
 end
-
+antiafk()
 findUnclaimed()
 boothclaim()
 walktobooth()
