@@ -34,17 +34,6 @@ local booths = {
     ["28"] = "-8, 3, 151"
 }
 
-local function antiafk()
-	local virtualUser = game:GetService('VirtualUser')
-	virtualUser:CaptureController()
-	while true do
-	wait()
-	virtualUser:SetKeyDown('0x1f')
-	wait(2)
-	virtualUser:SetKeyUp('0x1f')
-	end
-end
-
 local function serverHop()
     local gameId = "8737602449"
     if vcEnabled and getgenv().settings.vcServer then
@@ -98,6 +87,5 @@ boothclaim()
 walktobooth()
 refresh()
 queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/w3bOs/roblox/main/donateme.lua'))()")
-antiafk()
 wait(30)
 serverHop()
