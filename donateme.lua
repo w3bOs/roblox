@@ -35,10 +35,14 @@ local booths = {
 }
 
 local function antiafk()
-	local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.ClientMain.Replications.Workers.WalkDummy)
-	setconstant(Module,34,function()
-	   game:GetService("RunService").Heartbeat:Wait()
-	end)
+	local virtualUser = game:GetService('VirtualUser')
+	virtualUser:CaptureController()
+	while true do
+	wait()
+	virtualUser:SetKeyDown('0x1f')
+	wait(2)
+	virtualUser:SetKeyUp('0x1f')
+	end
 end
 
 local function serverHop()
