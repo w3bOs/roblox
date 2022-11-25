@@ -93,11 +93,11 @@ end
 local function refresh()
 	require(game.ReplicatedStorage.Remotes).Event("RefreshItems"):InvokeServer()
 end
-antiafk()
 findUnclaimed()
 boothclaim()
 walktobooth()
 refresh()
 queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/w3bOs/roblox/main/donateme.lua'))()")
+antiafk()
 wait(30)
 serverHop()
